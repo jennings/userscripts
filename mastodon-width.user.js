@@ -3,8 +3,7 @@
 // @description  Expands the width of columns on some of the popular Mastodon instances.
 // @author       Stephen Jennings
 // @namespace    http://jennings.io/
-// @version      1.20170405.1
-// @grant        GM_addStyle
+// @version      1.20171113
 // @run-at       document-body
 // @match        https://mastodon.social/
 // @match        https://mastodon.social/web/*
@@ -21,8 +20,16 @@
 (function() {
   'use strict';
 
-  GM_addStyle('.column {' +
-      'flex: 1 0 330px' +
-    '}');
+  addStyleBlock(`
+    .column {
+      flex: 1 0 330px
+    }
+  `)
 
+  function addStyleBlock(css) {
+    const style = document.createElement('style')
+    style.type = 'text/css'
+    style.appendChild(document.createTextNode(css))
+    document.head.appendChild(style)
+  }
 })();

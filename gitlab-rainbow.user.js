@@ -3,9 +3,8 @@
 // @description  Makes the GitLab menu bar more fabulous.
 // @author       Stephen Jennings
 // @namespace    http://jennings.io/
-// @version      1.20170312
+// @version      1.20171113
 // @match        https://gitlab.com/*
-// @grant        GM_addStyle
 // @run-at       document-start
 // ==/UserScript==
 
@@ -14,12 +13,21 @@
 (function() {
   'use strict';
 
-  GM_addStyle('header.navbar-gitlab {' +
-      'background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);' +
-    '}');
+  addStyleBlock(`
+    header.navbar-gitlab {
+      background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    }
 
-  GM_addStyle('header.navbar-gitlab .side-nav-toggle {' +
-    'background-color: rgba(255, 255, 255, 0.5);' +
-  '}');
+    header.navbar-gitlab .side-nav-toggle {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  `)
+
+  function addStyleBlock(css) {
+    const style = document.createElement('style')
+    style.type = 'text/css'
+    style.appendChild(document.createTextNode(css))
+    document.head.appendChild(style)
+  }
 
 })();
