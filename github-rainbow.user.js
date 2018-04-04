@@ -3,7 +3,7 @@
 // @description  Makes the GitHub menu bar more fabulous.
 // @author       Stephen Jennings
 // @namespace    http://jennings.io/
-// @version      1.20171113
+// @version      1.20180403
 // @match        https://github.com/*
 // @run-at       document-start
 // ==/UserScript==
@@ -32,7 +32,7 @@
      }
 
      .Header .header-search-wrapper, .header .header-search-wrapper.focus {
-       background-color: rgba(0, 0, 0, 0.15);
+       background-color: rgba(0, 0, 0, 0.20);
      }
 
      .Header .header-search, .header .header-search-input {
