@@ -27,7 +27,7 @@
   function addDivAsFirstChild(node, classname) {
     const div = document.createElement('div');
     div.classList.add('rainbow');
-    header.prepend(div);
+    node.prepend(div);
   }
 
   function addStyleBlock(css) {
