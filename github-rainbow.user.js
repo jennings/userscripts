@@ -3,7 +3,7 @@
 // @description  Makes the GitHub menu bar more fabulous.
 // @author       Stephen Jennings
 // @namespace    http://jennings.io/
-// @version      1.20190814
+// @version      1.20190913
 // @match        https://github.com/*
 // @run-at       document-start
 // ==/UserScript==
