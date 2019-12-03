@@ -26,7 +26,7 @@
 
   function addDivAsFirstChild(node, classname) {
     const div = document.createElement('div');
-    div.classList.add('rainbow');
+    div.classList.add(classname);
     node.prepend(div);
   }
 
