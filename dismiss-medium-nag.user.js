@@ -9,58 +9,61 @@
 // ==/UserScript==
 
 (function() {
-  'use strict';
+  "use strict";
 
   if (isMedium()) {
-    console.log("Detected Medium")
-    let dismiss, timeout
+    console.log("Detected Medium");
+    let dismiss, timeout;
 
     // Try to dismiss the nag
     dismiss = setInterval(() => {
       if (dismissNagDialog()) {
-        clearInterval(dismiss)
-        clearTimeout(timeout)
+        clearInterval(dismiss);
+        clearTimeout(timeout);
       }
-    }, 200)
+    }, 200);
 
     // Give up after 5 seconds
     timeout = setTimeout(() => {
-      clearInterval(dismiss)
-      console.log("Gave up trying to dismiss the Medium nag dialog")
-      showToast("Gave up")
-    }, 5000)
+      clearInterval(dismiss);
+      console.log("Gave up trying to dismiss the Medium nag dialog");
+      showToast("Gave up");
+    }, 5000);
   }
 
   function dismissNagDialog() {
-    const dismissButton = document.querySelector(`.overlay button[data-action=overlay-close]`)
+    const dismissButton = document.querySelector(
+      `.overlay button[data-action=overlay-close]`
+    );
     if (dismissButton) {
-      dismissButton.click()
-      console.log("Dismissed Medium nag dialog")
-      showToast("Dismissed Medium nag")
-      return true
+      dismissButton.click();
+      console.log("Dismissed Medium nag dialog");
+      showToast("Dismissed Medium nag");
+      return true;
     }
   }
 
   function isMedium() {
-    return !!document.querySelector(`meta[name="twitter:app:name:iphone"][content=Medium]`)
+    return !!document.querySelector(
+      `meta[name="twitter:app:name:iphone"][content=Medium]`
+    );
   }
 
   function showToast(msg) {
-    const div = document.createElement('div')
-    div.innerHTML = msg
-    div.style.position = 'absolute'
-    div.style.top = '0'
-    div.style.right = '0'
-    div.style.zIndex = '9001'
-    div.style.color = 'black'
-    div.style.backgroundColor = 'white'
-    div.style.border = 'solid 1px black'
-    div.style.padding = '2px'
-    div.style.fontSize = '13px'
-    div.style.cursor = 'pointer'
-    div.addEventListener('click', () => div.remove())
+    const div = document.createElement("div");
+    div.innerHTML = msg;
+    div.style.position = "absolute";
+    div.style.top = "0";
+    div.style.right = "0";
+    div.style.zIndex = "9001";
+    div.style.color = "black";
+    div.style.backgroundColor = "white";
+    div.style.border = "solid 1px black";
+    div.style.padding = "2px";
+    div.style.fontSize = "13px";
+    div.style.cursor = "pointer";
+    div.addEventListener("click", () => div.remove());
 
-    document.body.appendChild(div)
+    document.body.appendChild(div);
   }
-
 })();

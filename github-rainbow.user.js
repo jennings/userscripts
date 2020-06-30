@@ -11,9 +11,9 @@
 // Inspired by: https://twitter.com/sarah_edo/status/837454918130659328
 
 (function() {
-  'use strict';
+  "use strict";
 
-  addDivAsFirstChild(document.querySelector('.Header'), 'rainbow');
+  addDivAsFirstChild(document.querySelector(".Header"), "rainbow");
 
   addStyleBlock(`
      .Header > .rainbow {
@@ -22,19 +22,18 @@
        top: 0; left: 0; right: 0;
        height: 5px;
      }
-  `)
+  `);
 
   function addDivAsFirstChild(node, classname) {
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.classList.add(classname);
     node.prepend(div);
   }
 
   function addStyleBlock(css) {
-    const style = document.createElement('style')
-    style.type = 'text/css'
-    style.appendChild(document.createTextNode(css))
-    document.head.appendChild(style)
+    const style = document.createElement("style");
+    style.type = "text/css";
+    style.appendChild(document.createTextNode(css));
+    document.head.appendChild(style);
   }
-
 })();

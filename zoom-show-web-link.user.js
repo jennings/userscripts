@@ -3,7 +3,7 @@
 // @description  Adds a link to the Zoom web client to the join page.
 // @author       Stephen Jennings
 // @namespace    http://jennings.io/
-// @version      1.20200622.0
+// @version      1.20200629.0
 // @match        https://*.zoom.us/j/*
 // @run-at       document-start
 // ==/UserScript==

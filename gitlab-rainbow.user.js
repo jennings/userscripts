@@ -11,7 +11,7 @@
 // Inspired by: https://twitter.com/sarah_edo/status/837454918130659328
 
 (function() {
-  'use strict';
+  "use strict";
 
   addStyleBlock(`
     header.navbar-gitlab {
@@ -21,13 +21,12 @@
     header.navbar-gitlab .side-nav-toggle {
       background-color: rgba(255, 255, 255, 0.5);
     }
-  `)
+  `);
 
   function addStyleBlock(css) {
-    const style = document.createElement('style')
-    style.type = 'text/css'
-    style.appendChild(document.createTextNode(css))
-    document.head.appendChild(style)
+    const style = document.createElement("style");
+    style.type = "text/css";
+    style.appendChild(document.createTextNode(css));
+    document.head.appendChild(style);
   }
-
 })();

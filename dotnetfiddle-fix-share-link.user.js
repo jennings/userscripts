@@ -9,18 +9,18 @@
 // ==/UserScript==
 
 (function() {
-  'use strict';
+  "use strict";
 
   addStyleBlock(`
     .copy-clipboard {
       position: static;
     }
-  `)
+  `);
 
   function addStyleBlock(css) {
-    const style = document.createElement('style')
-    style.type = 'text/css'
-    style.appendChild(document.createTextNode(css))
-    document.head.appendChild(style)
+    const style = document.createElement("style");
+    style.type = "text/css";
+    style.appendChild(document.createTextNode(css));
+    document.head.appendChild(style);
   }
 })();
