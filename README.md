@@ -1,5 +1,4 @@
-Userscripts
-===========
+# Userscripts
 
 Some userscripts for use with [Tampermonkey][tm] or [Greasemonkey][gm].
 
@@ -8,3 +7,7 @@ the script. Greasemonkey probably works similarly.
 
 [tm]: https://tampermonkey.net/
 [gm]: http://www.greasespot.net/
+
+## Bookmarklets
+
+Contains scripts that make more sense as bookmarklets than as userscripts.

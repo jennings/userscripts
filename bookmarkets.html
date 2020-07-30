@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookmarklets</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </head>
+  <body>
+    <h1>Bookmarklets</h1>
+
+    <article>
+      <h2>Disable paste handlers on password fields</h2>
+      <a
+        href="javascript:document.querySelectorAll('input[type=password]').forEach(p=>{p.onpaste=null;p.addEventListener('paste',e=>e.stopImmediatePropagation(),{capture:true});});"
+      >
+        Disable paste handlers on password fields
+      </a>
+      <p>Disables paste blockers on password fields by doing the following:</p>
+      <ul>
+        <li>Sets <code>el.onpaste = null</code></li>
+        <li>
+          Adds a capturing event handler that calls
+          <code>e.stopImmediatePropagation()</code>
+        </li>
+      </ul>
+      <p>Test fields:</p>
+      <ul>
+        <li>
+          <input
+            type="password"
+            placeholder="Uses onpaste"
+            id="paste-onpaste"
+          />
+        </li>
+        <li>
+          <input
+            type="password"
+            id="paste-listener"
+            placeholder="Uses addEventListener"
+          />
+        </li>
+        <li>
+          <input type="password" id="paste-jquery" placeholder="Uses jquery" />
+        </li>
+      </ul>
+      <script>
+        document.querySelector("#paste-onpaste").onpaste = (e) =>
+          e.preventDefault();
+        document
+          .querySelector("#paste-listener")
+          .addEventListener("paste", (e) => e.preventDefault());
+        $("#paste-jquery").on("paste", (e) => e.preventDefault());
+      </script>
+    </article>
+  </body>
+</html>
