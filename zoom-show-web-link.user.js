@@ -3,12 +3,12 @@
 // @description  Adds a link to the Zoom web client to the join page.
 // @author       Stephen Jennings
 // @namespace    http://jennings.io/
-// @version      1.20200629.0
+// @version      1.20200722.0
 // @match        https://*.zoom.us/j/*
 // @run-at       document-start
 // ==/UserScript==
 
-(function() {
+(function () {
   "use strict";
 
   function getMeetingIdFromLocation() {
@@ -21,7 +21,7 @@
   }
 
   function getWebClientUrl(meetingId) {
-    return `https://zoom.us/wc/join/${meetingId}`;
+    return `https://zoom.us/wc/join/${meetingId}${location.search}`;
   }
 
   let attempts = 4;
