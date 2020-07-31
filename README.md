@@ -10,4 +10,8 @@ the script. Greasemonkey probably works similarly.
 
 ## Bookmarklets
 
+[Bookmarklets on GitHub Pages][bm]
+
 Contains scripts that make more sense as bookmarklets than as userscripts.
+
+[bm]: https://jennings.io/userscripts/bookmarklets.html
