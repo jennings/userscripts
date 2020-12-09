@@ -17,7 +17,7 @@
 // @match        https://social.targaryen.house/web/*
 // ==/UserScript==
 
-(function() {
+(function () {
   "use strict";
 
   addStyleBlock(`

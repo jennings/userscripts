@@ -10,7 +10,7 @@
 
 // Inspired by: https://twitter.com/sarah_edo/status/837454918130659328
 
-(function() {
+(function () {
   "use strict";
 
   addStyleBlock(`
